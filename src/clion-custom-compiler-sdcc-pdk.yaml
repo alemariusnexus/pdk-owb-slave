@@ -1,0 +1,134 @@
+# Based on the process described in https://blog.jetbrains.com/clion/2022/09/custom-compilers/
+#
+# Be sure to update the defines-text macros if you use a different SDCC version, using a command like this with an
+# empty file void.c:
+#
+#     sdcc -mpdk13 -E -dM void.c
+
+compilers:
+
+
+
+  - description: SDCC for PDK13
+    match-compiler-exe: "(.*/)?sdcc(.exe)?"
+    match-args: -mpdk13
+    match-language: C
+    include-dirs:
+      - ${compiler-exe-dir}/../include/pdk13
+      - ${compiler-exe-dir}/../include
+    defines:
+      __sfr: volatile unsigned char
+      __sfr16: volatile unsigned short
+    defines-text: "
+#define __SDCC_pdk13 1
+#define __SDCC_BITINT_MAXWIDTH 64
+#define __STDC_VERSION__ 201112L
+#define __STDC_HOSTED__ 1
+#define __SDCCCALL 0
+#define __STDC_UTF_16__ 1
+#define __SIZEOF_FLOAT__ 4
+#define __SDCC_VERSION_MINOR 4
+#define __STDC_ISO_10646__ 201409L
+#define __SDCC_VERSION_PATCH 0
+#define __SDCC_VERSION_MAJOR 4
+#define __STDC_NO_VLA__ 1
+#define __SDCC 4_4_0
+#define __STDC_UTF_32__ 1
+#define __STDC_NO_THREADS__ 1
+#define __SDCC_CHAR_UNSIGNED 1
+#define __STDC_NO_ATOMICS__ 1
+#define __SIZEOF_DOUBLE__ 4
+#define __STDC__ 1
+#define __SDCC_REVISION 14620
+#define __STDC_NO_COMPLEX__ 1
+
+#define __at(x)
+#define __interrupt(x)
+#define __asm
+#define __endasm
+#define __naked
+"
+
+
+
+  - description: SDCC for PDK14
+    match-compiler-exe: "(.*/)?sdcc(.exe)?"
+    match-args: -mpdk14
+    match-language: C
+    include-dirs:
+      - ${compiler-exe-dir}/../include/pdk14
+      - ${compiler-exe-dir}/../include
+    defines:
+      __sfr: volatile unsigned char
+      __sfr16: volatile unsigned short
+    defines-text: "
+#define __SDCC_pdk14 1
+#define __SDCC_BITINT_MAXWIDTH 64
+#define __STDC_VERSION__ 201112L
+#define __STDC_HOSTED__ 1
+#define __SDCCCALL 0
+#define __STDC_UTF_16__ 1
+#define __SIZEOF_FLOAT__ 4
+#define __SDCC_VERSION_MINOR 4
+#define __STDC_ISO_10646__ 201409L
+#define __SDCC_VERSION_PATCH 0
+#define __SDCC_VERSION_MAJOR 4
+#define __STDC_NO_VLA__ 1
+#define __SDCC 4_4_0
+#define __STDC_UTF_32__ 1
+#define __STDC_NO_THREADS__ 1
+#define __SDCC_CHAR_UNSIGNED 1
+#define __STDC_NO_ATOMICS__ 1
+#define __SIZEOF_DOUBLE__ 4
+#define __STDC__ 1
+#define __SDCC_REVISION 14620
+#define __STDC_NO_COMPLEX__ 1
+
+#define __at(x)
+#define __interrupt(x)
+#define __asm
+#define __endasm
+#define __naked
+"
+
+
+
+  - description: SDCC for PDK15
+    match-compiler-exe: "(.*/)?sdcc(.exe)?"
+    match-args: -mpdk15
+    match-language: C
+    include-dirs:
+      - ${compiler-exe-dir}/../include/pdk15
+      - ${compiler-exe-dir}/../include
+    defines:
+      __sfr: volatile unsigned char
+      __sfr16: volatile unsigned short
+    defines-text: "
+#define __SDCC_pdk15 1
+#define __SDCC_BITINT_MAXWIDTH 64
+#define __STDC_VERSION__ 201112L
+#define __STDC_HOSTED__ 1
+#define __SDCCCALL 0
+#define __STDC_UTF_16__ 1
+#define __SIZEOF_FLOAT__ 4
+#define __SDCC_VERSION_MINOR 4
+#define __STDC_ISO_10646__ 201409L
+#define __SDCC_VERSION_PATCH 0
+#define __SDCC_VERSION_MAJOR 4
+#define __STDC_NO_VLA__ 1
+#define __SDCC 4_4_0
+#define __STDC_UTF_32__ 1
+#define __STDC_NO_THREADS__ 1
+#define __SDCC_CHAR_UNSIGNED 1
+#define __STDC_NO_ATOMICS__ 1
+#define __SIZEOF_DOUBLE__ 4
+#define __STDC__ 1
+#define __SDCC_REVISION 14620
+#define __STDC_NO_COMPLEX__ 1
+
+#define __at(x)
+#define __interrupt(x)
+#define __asm
+#define __endasm
+#define __naked
+"

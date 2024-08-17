@@ -1,0 +1,6 @@
+[submodule "src/std/pdk"]
+	path = src/std/pdk
+	url = https://github.com/free-pdk/pdk-includes.git
+[submodule "src/std/easy-pdk"]
+	path = src/std/easy-pdk
+	url = https://github.com/free-pdk/easy-pdk-includes.git
